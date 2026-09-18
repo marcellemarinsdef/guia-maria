@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg18
+    container_name: maria-pgvector
+    ports:
+      - "5432:5432"
+
+    environment:
+      POSTGRES_DB: maria-pgvector
+      POSTGRES_USER: maria
+      POSTGRES_PASSWORD: maria321
+
+    volumes:
+      - pgvector_data:/var/lib/postgresql
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U maria -d maria-pgvector
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+    restart: unless-stopped
+
+volumes:
+  pgvector_data:

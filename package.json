@@ -1,0 +1,32 @@
+{
+  "name": "guia-maria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node src/main/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1135.0",
+    "@langchain/aws": "^1.4.5",
+    "@langchain/community": "^1.1.29",
+    "@langchain/core": "^1.2.11",
+    "@langchain/textsplitters": "^1.0.1",
+    "dotenv": "^16.6.1",
+    "fastify": "^5.12.5",
+    "langchain": "^1.5.11",
+    "pg": "^8.23.0"
+  }
+}
