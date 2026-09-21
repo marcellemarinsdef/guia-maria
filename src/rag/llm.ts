@@ -5,4 +5,5 @@ export const llm = new ChatBedrockConverse({
   model: awsConfig.chatModel,
   region: awsConfig.region,
   temperature: 0,
+  maxTokens: awsConfig.maxTokens,
 });

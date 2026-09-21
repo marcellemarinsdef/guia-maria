@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch src/api/server.ts",
     "build": "tsc",
-    "start": "node src/main/server.ts"
+    "start": "tsx src/main/main.ts",
+    "ingest": "tsx scripts/ingest.ts"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "dotenv": "^16.6.1",
     "fastify": "^5.12.5",
     "langchain": "^1.5.11",
+    "pdf-parse": "^2.4.5",
     "pg": "^8.23.0"
   }
 }

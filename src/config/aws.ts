@@ -10,4 +10,6 @@ export const awsConfig = {
   embeddingModel:
     process.env.BEDROCK_EMBEDDING_MODEL_ID ??
     "amazon.titan-embed-text-v2:0",
+
+  maxTokens: 100
 };

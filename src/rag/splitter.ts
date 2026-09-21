@@ -1,3 +1,4 @@
+import { Document } from "@langchain/core/documents";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 
 const splitter = new RecursiveCharacterTextSplitter({
@@ -5,6 +6,6 @@ const splitter = new RecursiveCharacterTextSplitter({
   chunkOverlap: 100,
 });
 
-export async function splitDocuments(documents: any[]) {
+export async function splitDocuments(documents: Document[]) {
   return splitter.splitDocuments(documents);
 }
