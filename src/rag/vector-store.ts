@@ -1,10 +1,10 @@
 import { PGVectorStore } from "@langchain/community/vectorstores/pgvector";
 import { embeddings } from "./embeddings.js";
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.VECTOR_DB_URL;
 
 if (!connectionString) {
-  throw new Error("DATABASE_URL não está definida.");
+  throw new Error("VECTOR_DB_URL não está definida.");
 }
 
 const config = {

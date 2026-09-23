@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "KnowledgeDocument" ADD COLUMN     "status" TEXT NOT NULL DEFAULT 'PROCESSING',
+ALTER COLUMN "indexedAt" DROP NOT NULL,
+ALTER COLUMN "indexedAt" DROP DEFAULT;

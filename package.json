@@ -7,7 +7,8 @@
     "dev": "tsx watch src/api/server.ts",
     "build": "tsc",
     "start": "tsx src/main/main.ts",
-    "ingest": "tsx scripts/ingest.ts"
+    "ingest": "tsx scripts/ingest.ts",
+    "postinstall": "prisma skills sync || exit 0"
   },
   "keywords": [],
   "author": "",
@@ -25,10 +26,15 @@
     "@langchain/community": "^1.1.29",
     "@langchain/core": "^1.2.11",
     "@langchain/textsplitters": "^1.0.1",
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^7.10.0",
+    "d3-dsv": "^3.0.1",
     "dotenv": "^16.6.1",
     "fastify": "^5.12.5",
     "langchain": "^1.5.11",
+    "mammoth": "^1.12.3",
     "pdf-parse": "^2.4.5",
-    "pg": "^8.23.0"
+    "pg": "^8.23.0",
+    "prisma": "^7.10.0"
   }
 }

@@ -1,5 +1,5 @@
 services:
-  postgres:
+  postgres_maria_vector:
     image: pgvector/pgvector:pg18
     container_name: maria-pgvector
     ports:
@@ -24,5 +24,31 @@ services:
 
     restart: unless-stopped
 
+  postgres:
+    image: postgres:16
+    container_name: guia-maria-postgres
+    ports:
+      - "5434:5432"
+
+    environment:
+      POSTGRES_DB: guia-maria-postgres
+      POSTGRES_USER: guia-maria-postgres
+      POSTGRES_PASSWORD: maria321
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U guia-maria-postgres -d guia-maria-postgres
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+    restart: unless-stopped
+
 volumes:
   pgvector_data:
+  postgres_data:

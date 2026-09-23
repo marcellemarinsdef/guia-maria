@@ -1,5 +1,5 @@
 import { vectorStore } from "./vector-store.js";
 
 export const retriever = vectorStore.asRetriever({
-  k: 5,
+  k: 3,
 });

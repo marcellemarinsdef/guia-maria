@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model KnowledgeDocument {
+  id             String   @id @default(uuid())
+  documentId     String   @unique
+  documentName   String
+  documentType   String
+  version        String
+  source         String
+  filePath       String
+  contentHash    String
+  embeddingModel String
+  indexedAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  chunks EmbeddedChunk[]
+}
+
+model EmbeddedChunk {
+  id             String @id @default(uuid())
+  contentHash    String @unique
+  embeddingModel String
+
+  documentId String
+  document   KnowledgeDocument @relation(fields: [documentId], references: [id])
+
+  @@index([documentId])
+}
