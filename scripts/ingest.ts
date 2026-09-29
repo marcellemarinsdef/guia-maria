@@ -36,10 +36,10 @@ type DocumentConfig = {
 
 const documentsConfig: DocumentConfig[] = [
   {
-    path: "src/documents/exemplo5.txt",
-    documentId: "exemplo5",
-    documentName: "exemplo5",
-    documentType: "txt",
+    path: "src/documents/exemplo.pdf",
+    documentId: "exemplo",
+    documentName: "exemplo",
+    documentType: "pdf",
     version: "1.0",
     source: "local",
   },
